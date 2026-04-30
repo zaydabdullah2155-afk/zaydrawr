@@ -1,0 +1,109 @@
+/* Global Styles */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+p {
+    font-size: 18px;
+    margin: 20px 0;
+    max-width: 800px;
+}
+
+ul {
+    text-align: left;
+    display: inline-block;
+    margin: 20px 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Table Styles */
+table {
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+td, th {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Link Styles */
+a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    display: inline-block;
+}
+
+a:hover {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+}
+
+/* Form Styles */
+form table {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="password"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+input[type="file"],
+input[type="color"],
+input[type="range"] {
+    padding: 5px;
+}
+
+label {
+    color: white;
+    font-weight: bold;
+}
+
+/* Profile Image */
+.profile-img {
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
