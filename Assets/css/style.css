@@ -1,4 +1,4 @@
-/* Global Styles */
+﻿/* Global Styles */
 body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,6 +11,37 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 980px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+nav a {
+    background: rgba(255,255,255,0.15);
+    padding: 10px 16px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.25);
 }
 
 h1, h2 {
@@ -47,32 +78,26 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Table Styles */
+.table-container,
 table {
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 100%;
+    background: rgba(255,255,255,0.12);
+    border-radius: 12px;
 }
 
 td, th {
-    padding: 10px;
+    padding: 12px;
     text-align: center;
+    color: white;
 }
 
-/* Link Styles */
-a {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 15px;
-    display: inline-block;
-}
-
-a:hover {
-    background-color: rgba(255,255,255,0.2);
-    border-radius: 5px;
-}
-
-/* Form Styles */
 form table {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
     background-color: rgba(255,255,255,0.1);
     border-radius: 10px;
     padding: 20px;
@@ -84,11 +109,15 @@ input[type="email"],
 input[type="tel"],
 input[type="url"],
 input[type="date"],
-input[type="password"] {
+input[type="password"],
+select,
+textarea {
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 200px;
+    width: 100%;
+    max-width: 260px;
+    box-sizing: border-box;
 }
 
 input[type="file"],
@@ -97,13 +126,29 @@ input[type="range"] {
     padding: 5px;
 }
 
+textarea {
+    min-height: 100px;
+}
+
 label {
     color: white;
     font-weight: bold;
 }
 
-/* Profile Image */
 .profile-img {
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-note {
+    color: #f0f0f0;
+    font-size: 14px;
 }
