@@ -1,97 +1,118 @@
-﻿<?php
-session_start();
-$defaultStudents = [
-    [
-        'nama' => 'Uss TAZZ',
-        'nim' => '13242520030',
-        'foto' => 'Assets/images/Fanny.jpg',
-        'uts' => 85,
-        'uas' => 90,
-        'tugas' => 80,
-    ],
-    [
-        'nama' => 'Kairiiiii',
-        'nim' => '13242520031',
-        'foto' => 'Assets/images/Kairi.jpg',
-        'uts' => 85,
-        'uas' => 90,
-        'tugas' => 80,
-    ],
-];
+<?php
 
-if (!isset($_SESSION['students'])) {
-    $_SESSION['students'] = $defaultStudents;
-}
+require 'fungsi.php';
+$query = "SELECT * FROM mahasiswa";
+$mahasiswas = tampildata($query); /// wadah berisi data 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nama = trim($_POST['nama'] ?? '');
-    $nim = trim($_POST['nim'] ?? '');
-    $foto = trim($_POST['foto'] ?? '');
-    $uts = intval($_POST['uts'] ?? 0);
-    $uas = intval($_POST['uas'] ?? 0);
-    $tugas = intval($_POST['tugas'] ?? 0);
 
-    if ($nama && $nim && $foto) {
-        $_SESSION['students'][] = [
-            'nama' => htmlspecialchars($nama, ENT_QUOTES, 'UTF-8'),
-            'nim' => htmlspecialchars($nim, ENT_QUOTES, 'UTF-8'),
-            'foto' => htmlspecialchars($foto, ENT_QUOTES, 'UTF-8'),
-            'uts' => $uts,
-            'uas' => $uas,
-            'tugas' => $tugas,
-        ];
-    }
-    header('Location: mahasiswa.php');
-    exit;
-}
 
-$students = $_SESSION['students'];
+////ambil data (fetch) dari lemari
+///mysqli_fetch_row
+///mysqli_fetch_assoc
+///mysqli_fetch_array
+///mysqli_fetch_object
+
 ?>
+
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Mahasiswa</title>
-    <link rel="stylesheet" type="text/css" href="Assets/css/style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <hr>
-    <h1 align="center">WEB TI UNIMUS 2026 UYY</h1>
-    <table border="1" align="center" cellspacing="5" cellpadding="10">
+    <h1 align="center">
+        WEB TI UNIMUS 2026 OYEE
+    </h1>
+
+    <nav class="navbar">
+        <a href="index.php">Home</a>
+        <a href="biodata.php">Biodata</a>
+        <a href="kontak.php">Kontak</a>
+        <a href="mahasiswa.php">Data Mahasiswa</a>
+    </nav>
+
+    <h2>
+        Data Mahasiswa
+    </h2>
+    <div class="btn-container">
+        <a href="tambahdata.php" class="btn">+ Tambah Data</a>
+    </div>
+
+    <table border="1" cellpadding="5px">
         <tr>
-            <td><a href="index.php">Home</a></td>
-            <td><a href="profile.php">Profile</a></td>
-            <td><a href="contact.php">Contact</a></td>
-            <td><a href="mahasiswa.php">Data Mahasiswa</a></td>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Nim</th>
+            <th>Jurusan</th>
+            <th>Email</th>
+            <th>No. HP</th>
+            <th>Foto</th>
+            <th>Aksi</th>
         </tr>
-    </table>
-    <h2>Data Mahasiswa</h2>
-    <a href="tambahdata.php"><button>Tambah Data</button></a>
-    <table border="1" align="center" cellspacing="5" cellpadding="10">
-        <tr>
-            <th rowspan="2">No</th>
-            <th rowspan="2">Nama</th>
-            <th rowspan="2">NIM</th>
-            <th rowspan="2">Foto</th>
-            <th colspan="3">Nilai</th>
-        </tr>
-        <tr>
-            <th>UTS</th>
-            <th>UAS</th>
-            <th>Tugas</th>
-        </tr>
-        <?php foreach ($students as $index => $student): ?>
+        <?php
+        $no = 1;
+        foreach ($mahasiswas as $mhs) {
+
+        ?>
             <tr>
-                <td align="center"><?php echo $index + 1; ?></td>
-                <td><?php echo $student['nama']; ?></td>
-                <td><?php echo $student['nim']; ?></td>
-                <td><img src="<?php echo $student['foto']; ?>" alt="Foto <?php echo $student['nama']; ?>" width="100"></td>
-                <td align="center"><?php echo $student['uts']; ?></td>
-                <td align="center"><?php echo $student['uas']; ?></td>
-                <td align="center"><?php echo $student['tugas']; ?></td>
+                <td align="center"><?php echo $no++; ?></td>
+                <td><?php echo $mhs["nama"]; ?></td>
+                <td><?php echo $mhs["nim"]; ?></td>
+                <td align="center"><?php echo $mhs["jurusan"]; ?></td>
+                <td align="center"><?php echo $mhs["email"]; ?></td>
+                <td align="center"><?php echo $mhs["no_hp"]; ?></td>
+                <td>
+                    <img src="assets/img/<?php echo $mhs['foto']; ?>" width="80">
+                </td>
+                <td>
+
+                    <a href="editdata.php?id=<?php echo $mhs['id']; ?>">
+                        <button>Edit</button>
+                    </a>
+
+                    <a href="deletedata.php?id=<?php echo $mhs['id']; ?>"
+                        onclick="return confirm('Yakin ingin menghapus data ini?');">
+                        <button>Hapus</button>
+                    </a>
+                </td>
             </tr>
-        <?php endforeach; ?>
+        <?php
+        }
+        ?>
     </table>
+
+    <hr>
+
+    <table border="1" cellpadding="5px">
+        <tr>
+            <td>1,1</td>
+            <td>1,2</td>
+            <td>1,3</td>
+            <td>1,4</td>
+        </tr>
+        <tr>
+            <td>2,1</td>
+            <td colspan="2" rowspan="2"></td>
+            <td>2,4</td>
+        </tr>
+        <tr>
+            <td>3,1</td>
+            <td>3,4</td>
+        </tr>
+        <tr>
+            <td>4,1</td>
+            <td>4,2</td>
+            <td>4,3</td>
+            <td>4,4</td>
+        </tr>
+    </table>
+
 </body>
+
 </html>

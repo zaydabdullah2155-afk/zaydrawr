@@ -1,154 +1,282 @@
-﻿/* Global Styles */
-body {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
+* {
     margin: 0;
-    padding: 20px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.page-container {
-    width: 100%;
-    max-width: 980px;
-    padding: 20px;
+    padding: 0;
     box-sizing: border-box;
 }
 
-header {
-    margin-bottom: 30px;
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: #e2e8f0;
+    padding: 20px;
 }
 
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #38bdf8;
 }
 
-nav a {
-    background: rgba(255,255,255,0.15);
-    padding: 10px 16px;
-    border-radius: 10px;
-    color: white;
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #94a3b8;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+td {
+    padding: 12px 20px;
+}
+
+a {
     text-decoration: none;
+    color: #e2e8f0;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-nav a:hover {
-    background: rgba(255,255,255,0.25);
+a:hover {
+    color: #38bdf8;
 }
 
-h1, h2 {
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    border: 3px solid #38bdf8;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 
 p {
-    font-size: 18px;
-    margin: 20px 0;
-    max-width: 800px;
-}
-
-ul {
-    text-align: left;
-    display: inline-block;
-    margin: 20px 0;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    margin: 10px;
-    cursor: pointer;
-    border-radius: 25px;
-    font-size: 16px;
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-.table-container,
-table {
-    border-collapse: collapse;
+    max-width: 700px;
     margin: 20px auto;
-    width: 100%;
-    max-width: 100%;
-    background: rgba(255,255,255,0.12);
-    border-radius: 12px;
-}
-
-td, th {
-    padding: 12px;
-    text-align: center;
-    color: white;
-}
-
-form table {
-    width: 100%;
-    max-width: 720px;
-    margin: 0 auto;
-    background-color: rgba(255,255,255,0.1);
-    border-radius: 10px;
+    text-align: justify;
+    line-height: 1.6;
+    background: rgba(255,255,255,0.05);
     padding: 20px;
+    border-radius: 15px;
+    color: #cbd5f5;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="email"],
-input[type="tel"],
-input[type="url"],
-input[type="date"],
-input[type="password"],
-select,
-textarea {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
-    max-width: 260px;
-    box-sizing: border-box;
+div {
+    text-align: center;
+    margin-top: 40px;
 }
 
-input[type="file"],
-input[type="color"],
-input[type="range"] {
-    padding: 5px;
+div h1 {
+    font-size: 30px;
+    color: #38bdf8;
 }
 
-textarea {
-    min-height: 100px;
+div p {
+    background: none;
+}
+.navbar {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
 }
 
-label {
+.navbar a {
+    color: #e2e8f0;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #38bdf8;
+}
+
+.contact-container {
+    width: 350px;
+    margin: 80px auto;
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.contact-container h1 {
+    margin-bottom: 15px;
+    color: #38bdf8;
+}
+
+.contact-container p {
+    background: none;
+    color: #cbd5f5;
+}
+.biodata-container {
+    width: 350px;
+    margin: 80px auto;
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.biodata-container h2 {
+    margin-bottom: 15px;
+    color: #38bdf8;
+}
+
+.biodata-container p {
+    background: none;
+    color: #cbd5f5;
+    line-height: 1.6;
+}
+.title {
+    text-align: center;
+    margin-top: 30px;
+    color: #38bdf8;
+}
+
+.btn-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.btn {
+    background: #38bdf8;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0ea5e9;
     color: white;
-    font-weight: bold;
 }
 
-.profile-img {
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.button-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+.table-container {
+    width: 90%;
+    margin: auto;
     margin-top: 20px;
 }
 
-.form-note {
-    color: #f0f0f0;
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.modern-table th {
+    background: rgba(56,189,248,0.2);
+    color: #38bdf8;
+    padding: 12px;
+}
+
+.modern-table td {
+    padding: 10px;
+    text-align: center;
+    color: #e2e8f0;
+}
+
+.modern-table tr:nth-child(even) {
+    background: rgba(255,255,255,0.03);
+}
+
+.modern-table img {
+    width: 50px;
+    border-radius: 50%;
+}
+.btn {
+    display: inline-block;
+    background: #38bdf8;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0ea5e9;
+    color: white;
+}
+form {
+    margin: 40px auto;
+    width: fit-content;
+}
+
+form table {
+    background: rgba(255,255,255,0.05);
+    padding: 20px 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+form td {
+    padding: 8px 10px;
+    color: #e2e8f0;
+}
+
+form label {
     font-size: 14px;
+}
+
+form input,
+form textarea,
+form select {
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    width: 200px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+form input[type="file"] {
+    background: none;
+}
+
+form textarea {
+    resize: none;
+    height: 60px;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #38bdf8;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #0ea5e9;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 30px;
+    color: #38bdf8;
 }
