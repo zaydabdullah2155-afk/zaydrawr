@@ -22,16 +22,39 @@ function tampildata($query)
 
 function upload()
 {
-    $namaFile = $_FILES['foto']['name'];
-    $tmpName  = $_FILES['foto']['tmp_name'];
-
-    if ($namaFile == '') {
+    if (!isset($_FILES['foto']) || $_FILES['foto']['error'] === UPLOAD_ERR_NO_FILE) {
         return 'default.png';
     }
 
-    move_uploaded_file($tmpName, 'assets/img/' . $namaFile);
+    if ($_FILES['foto']['error'] !== UPLOAD_ERR_OK) {
+        return 'default.png';
+    }
 
-    return $namaFile;
+    $namaFile = $_FILES['foto']['name'];
+    $tmpName  = $_FILES['foto']['tmp_name'];
+    $fileSize = $_FILES['foto']['size'];
+    $fileExt  = strtolower(pathinfo($namaFile, PATHINFO_EXTENSION));
+    $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+
+    if (!in_array($fileExt, $allowedExtensions, true)) {
+        return 'default.png';
+    }
+
+    if ($fileSize > 5 * 1024 * 1024) {
+        return 'default.png';
+    }
+
+    $uploadDir = __DIR__ . '/assets/img/';
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0755, true);
+    }
+
+    $newFileName = uniqid('img_', true) . '.' . $fileExt;
+    if (move_uploaded_file($tmpName, $uploadDir . $newFileName)) {
+        return $newFileName;
+    }
+
+    return 'default.png';
 }
 
 function tambahdata($data)

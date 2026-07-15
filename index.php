@@ -2,42 +2,44 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body style="margin:0; font-family: Arial; background-color:hwb(197 24% 0%)">
-
-    <h1 align="center">
-        WEB TI UNIMUS 2026 OYEE
-    </h1>
-    <table border="1" align="center" cellspacing="0" cellpadding="10px">
+<body>
+    <div class="page-wrapper">
         <nav class="navbar">
-            <a href="index.php">Home</a>
+            <a href="index.php" class="active">Home</a>
             <a href="biodata.php">Biodata</a>
             <a href="kontak.php">Kontak</a>
             <a href="mahasiswa.php">Data Mahasiswa</a>
         </nav>
 
-    </table>
-    <h2 align="center">
-        TEKNOLOGI INFORMASI 2026
-    </h2>
-    <center>
-        <img src="https://assets.pikiran-rakyat.com/crop/0x0:0x0/720x0/webp/photo/2025/08/28/1067290352.png"
-            width="200px" />
-    </center>
-    <P>
-        Nama saya Muhammad Zaid Abdullah, dengan NIM 13242520030, mahasiswa dari Program Studi Teknologi Informasi. Saat ini saya tinggal di Magelang. Saya memiliki ketertarikan di bidang teknologi dan pengembangan web, serta memiliki beberapa keahlian seperti HTML, CSS, dan dasar JavaScript. Di waktu luang, saya senang melakukan aktivitas produktif seperti membaca, belajar coding, dan mengikuti perkembangan teknologi terbaru. Saya juga aktif menggunakan media sosial dan platform profesional untuk mengembangkan pengetahuan serta portofolio saya.
-    </P>
+        <section class="hero">
+            <div class="hero-copy">
+                <span class="eyebrow">Dark Fantasy Portal</span>
+                <h1>Selamat Datang di WEB TI UNIMUS 2026</h1>
+                <p>Temui profil profesional Muhammad Zaid Abdullah dengan desain modern, nuansa gelap, dan sentuhan fantasi yang elegan di setiap halaman.</p>
+            </div>
+            <div class="hero-visual">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Mb3MI8Q-55Ys68SSG3UalUkijN5AyCZhJbPx0c_vgQ&s=10" alt="Profil Zaid Abdullah">
+            </div>
+        </section>
 
+        <section class="content-grid">
+            <article class="page-card">
+                <h1>Profil Singkat</h1>
+                <p class="profile-detail"><strong>Nama:</strong> Muhammad Zaid Abdullah<br>
+                    <strong>NIM:</strong> 13242520030<br>
+                    Mahasiswa Teknologi Informasi yang menguasai HTML, CSS, dan konsep pengembangan web modern.</p>
+            </article>
 
-    <div style="text-align:center; margin-top:50px;">
-        <h1>Selamat Datang</h1>
-        <p>Ini adalah halaman utama website saya</p>
+           
+        </section>
     </div>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-
 </body>
 
 </html>
